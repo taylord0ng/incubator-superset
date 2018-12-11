@@ -1,5 +1,5 @@
 FROM python:3.6
-#RUN useradd --user-group --create-home --shell /bin/bash work
+RUN useradd --user-group --create-home --shell /bin/bash work
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     HOME=/home/work
