@@ -1,5 +1,5 @@
 FROM python:3.6
-RUN useradd --user-group --create-home --shell /bin/bash work
+#RUN useradd --user-group --create-home --shell /bin/bash work
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     HOME=/home/work
@@ -29,7 +29,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 COPY ./superset ./superset
 RUN chown -R work:work $HOME
-USER work
+#USER work
 RUN cd superset/assets && yarn
 RUN cd superset/assets && npm run build
 ENTRYPOINT ["docker-entrypoint.sh"]
